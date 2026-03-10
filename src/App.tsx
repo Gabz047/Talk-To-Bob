@@ -53,6 +53,7 @@ function reset() {
 
   return (
     <div className="w-dvw h-dvh flex flex-col justify-center items-center relative">
+    {currentQuestion?.id == 1 && <h1 className="text-2xl duration-200 mb-10 text">Seja legal com o Bob, se fazer ele ficar bravo duas vezes ele desiste de você!</h1>}
       {
         selectedAnswer && (failed || selectedAnswer?.pointsToQuestion == null) ?
          <Warning message={failed ? 'Você Falhou, deixou o bob bravo 2 vezes! Tente novamente' : 'Parabéns você foi muito legal com o bob!'} success={!failed}>
