@@ -1,5 +1,5 @@
 import { Bob } from "./components/bob/BobCharacter";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { Answer, Question } from "./utils/data/questions/questions";
 import { Questions } from "./utils/data/questions/questions";
 import { Chat, Warning } from "./components";
@@ -9,10 +9,10 @@ import { Chat, Warning } from "./components";
 
 export function App() {
   const [selectedAnswer, setSelectedAnswer] = useState<Answer | null>(null);
-  const [currentQuestion, setNextQuestion] = useState<Question | null>(null);
-  const [bobWords, setBobWords] = useState<string>('')
+  const [currentQuestion, setNextQuestion] = useState<Question | null>(Questions[0] ?? null);
+  const [bobWords, setBobWords] = useState<string>(Questions[0].question ?? null)
   const [moods, setMoods] = useState<string[]>([]);
-  const [failed, setFailed] = useState<Boolean>(false) 
+  const [failed, setFailed] = useState<boolean>(false) 
   
 
   
@@ -21,6 +21,7 @@ function reset() {
   setSelectedAnswer(null)
   setMoods([])
   setFailed(false)
+  setBobWords(Questions[0].question)
 }
 
   function handleAnswer(answer: Answer | null) {
@@ -35,21 +36,15 @@ function reset() {
     setBobWords(answer.bobAnswer)
     const next =
         Questions.find((s) => s.id === answer.pointsToQuestion) ?? null;
+        if (next) {
     setTimeout(() => {
       
       setNextQuestion(next);
       setBobWords(next?.question ?? '')
     }, 3000);
+  }
     
   }
-
-  useEffect(() => {
-    if (!currentQuestion) {
-      setBobWords(Questions[0].question)
-      setNextQuestion(Questions[0]);
-    }
-    console.log(currentQuestion);
-  }, [currentQuestion]);
 
   return (
     <div className="w-dvw h-dvh flex flex-col justify-center items-center relative">
