@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+# 💬 Talk To Bob
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive conversational app built quickly as a **simple college assignment**, showcasing **React**, **TypeScript**, and **State Management** skills.  
+Despite its small scope, the project is **well-organized and fully componentized**.
 
-Currently, two official plugins are available:
+**🎮 [Try it now →](https://gabz047.github.io/Talk-To-Bob/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 About the Project
 
-## React Compiler
+"Talk To Bob" is a simple game where you interact with the character Bob through dialogue choices.  
+If Bob gets angry twice, you lose; otherwise, you win! 🎉  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Completed in a few hours as a **college assignment**, the project applies solid web development concepts with **clean architecture** and **reusable components**.
 
-## Expanding the ESLint configuration
+## 🚀 Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React**  
+- **TypeScript**  
+- **Tailwind CSS**  
+- **Vite** for fast builds  
+- **GitHub Pages** for deployment  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💡 Key Concepts Applied
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **State Management** with React Hooks (`useState`)  
+- **Component Composition** for modular, reusable UI  
+- **TypeScript** for type safety  
+- **Event Handling** for interactive gameplay  
+- **Well-structured project architecture** despite quick development  
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🌐 Deployment
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Available at: [https://gabz047.github.io/Talk-To-Bob/](https://gabz047.github.io/Talk-To-Bob/)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+> Quick college assignment demonstrating **practical React + TypeScript experience** with clean, organized, and component-based code.
